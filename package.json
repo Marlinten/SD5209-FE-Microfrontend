@@ -1,0 +1,31 @@
+{
+  "name": "mfmf",
+  "private": true,
+  "scripts": {
+    "start": "lerna run --scope @mfmf/* --parallel start",
+    "build": "lerna run --scope @mfmf/* build",
+    "main": "cd main && yarn start",
+    "checkout": "cd checkout && yarn start",
+    "product": "cd product && yarn start",
+    "shared": "cd shared && yarn start",
+    "docker:start": "docker compose up -d",
+    "docker:stop": "docker compose down -v",
+    "prettier": "prettier --write \"**/*.js\""
+  },
+  "devDependencies": {
+    "lerna": "^5.3.0",
+    "prettier": "^2.8.7"
+  },
+  "workspaces": {
+    "packages": [
+      "account",
+      "blog",
+      "chat",
+      "checkout",
+      "product",
+      "shared",
+      "main"
+    ]
+  },
+  "version": "0.0.0"
+}
